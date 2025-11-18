@@ -17,10 +17,25 @@ Each ADR follows this structure:
 
 - **Title**: A short phrase describing the decision
 - **Date**: When the decision was made
-- **Status**: Proposed, Accepted, Deprecated, or Superseded
+- **Status**: The current state of the decision (see below)
 - **Context**: The issue or problem being addressed
 - **Decision**: What we decided to do
 - **Consequences**: The positive, negative, and neutral impacts of the decision
+
+### ADR Status Values
+
+The status field indicates the current state of the decision:
+
+- **Proposed**: The decision is under consideration but not yet finalized. Use this for decisions that need review or discussion before acceptance.
+
+- **Accepted**: The decision has been agreed upon and is currently in effect. Most ADRs will have this status once approved.
+
+- **Deprecated**: The decision is no longer recommended but may still be in use. Use this when a better approach is available but migration hasn't been completed yet.
+
+- **Superseded**: The decision has been replaced by a newer decision. When creating a new ADR that replaces an old one, update the old ADR's status to "Superseded by ADR-XXXX" and link to the new ADR.
+
+> ![IMPORTANT]
+> ADRs are supposed to be immutable records. Once an ADR is Accepted, never edit its content. Instead, create a new ADR that supersedes it to document why the decision changed.
 
 ## Working with ADRs
 
@@ -29,6 +44,8 @@ This project uses `adr-tools-python` to manage ADRs. Make sure you have installe
 ```bash
 pip install -r requirements-dev.txt
 ```
+
+This is a lightweight cli tool to create and manage ADRs.
 
 ### Common Commands
 

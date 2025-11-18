@@ -1,0 +1,33 @@
+[sqlfluff]
+# SQL dialect to use
+dialect = postgres
+
+# Templater to use
+templater = jinja
+
+# Exclude certain rules or error codes
+exclude_rules = L003,L031
+
+# Set the complexity level for linting
+max_line_length = 120
+
+# Indentation
+indent_unit = space
+tab_space_size = 4
+
+[sqlfluff:indentation]
+# See https://docs.sqlfluff.com/en/stable/indentation.html
+indented_joins = False
+indented_ctes = False
+indented_using_on = True
+template_blocks_indent = True
+
+[sqlfluff:templater:jinja]
+apply_dbt_builtins = True
+
+[sqlfluff:rules]
+# Allow standalone aliases
+allow_scalar = True
+
+# L003: Indentation not consistent
+# L031: Avoid table aliases in join conditions
