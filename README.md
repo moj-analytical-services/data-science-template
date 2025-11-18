@@ -2,6 +2,7 @@
 
 [![Ministry of Justice Repository Compliance Badge](https://github-community.service.justice.gov.uk/repository-standards/api/analytical-platform-airflow-python-template/badge)](https://github-community.service.justice.gov.uk/repository-standards/analytical-platform-airflow-python-template)
 [![Pre-commit](https://github.com/moj-analytical-services/data-science-template/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/moj-analytical-services/data-science-template/actions/workflows/pre-commit.yml)
+[![Pytest](https://github.com/moj-analytical-services/data-science-template/actions/workflows/pytest.yml/badge.svg)](https://github.com/moj-analytical-services/data-science-template/actions/workflows/pytest.yml)
 
 This template repository equips you with the default initial files required for an Analytical Platform Airflow workflow.
 
