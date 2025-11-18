@@ -11,6 +11,9 @@ An Architecture Decision Record (ADR) is a document that captures an important a
 - Avoid revisiting already-settled decisions
 - Create accountability for architectural choices
 
+> ![WARNING]
+> If your decision making reasoning is more sensitive than the privacy level of the codebase itself allows for, consider other documentation methods.
+
 ## ADR Format
 
 Each ADR follows this structure:
