@@ -1,6 +1,5 @@
 # Environment variables and secrets
 .env
-.secrets.baseline
 
 # Terraform
 .terraform/
@@ -57,4 +56,3 @@ wheels/
 # *.xlsx
 # *.parquet
 # data/
-
