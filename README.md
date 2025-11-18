@@ -28,7 +28,7 @@ The repository comes with the following preset files:
 This template includes pre-commit hooks for automated code quality checks. The hooks cover:
 
 - **Python**: Black formatting, Flake8 linting, Bandit security checks
-- **R**: styler formatting, lintr linting
+- **R**: styler formatting, lintr linting (requires R packages: `install.packages(c("styler", "lintr"))`)
 - **SQL**: SQLFluff linting and formatting
 - **Notebooks**: nbstripout to remove outputs
 - **General**: trailing whitespace, file size limits, secrets detection
