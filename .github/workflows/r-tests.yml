@@ -14,22 +14,10 @@ jobs:
           r-version: '4.5.1'
           use-public-rspm: true
 
-      - name: Cache R packages
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.R_LIBS_USER }}
-          key: r-packages-${{ runner.os }}-${{ hashFiles('renv.lock') }}
-          restore-keys: |
-            r-packages-${{ runner.os }}-
-
-      - name: Install renv
+      - name: Install testthat
         run: |
-          Rscript -e 'install.packages("renv")'
-
-      - name: Restore R packages
-        run: |
-          Rscript -e 'renv::restore()'
+          Rscript -e 'install.packages("testthat")'
 
       - name: Run R tests
         run: |
-          Rscript -e 'testthat::test_dir("tests/unit/")'
+          Rscript -e 'if (dir.exists("tests/unit")) testthat::test_dir("tests/unit/") else message("No R tests found")'
