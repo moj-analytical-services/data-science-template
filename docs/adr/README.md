@@ -11,6 +11,9 @@ An Architecture Decision Record (ADR) is a document that captures an important a
 - Avoid revisiting already-settled decisions
 - Create accountability for architectural choices
 
+> [!WARNING]
+> If your decision making reasoning is more sensitive than the privacy level of the codebase itself allows for, consider other documentation methods.
+
 ## ADR Format
 
 Each ADR follows this structure:
@@ -34,7 +37,7 @@ The status field indicates the current state of the decision:
 
 - **Superseded**: The decision has been replaced by a newer decision. When creating a new ADR that replaces an old one, update the old ADR's status to "Superseded by ADR-XXXX" and link to the new ADR.
 
-> ![IMPORTANT]
+> [!IMPORTANT]
 > ADRs are supposed to be immutable records. Once an ADR is Accepted, never edit its content. Instead, create a new ADR that supersedes it to document why the decision changed.
 
 ## Working with ADRs

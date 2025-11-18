@@ -12,6 +12,17 @@ jobs:
         with:
           r-version: '4.5.1'  # Match pre-commit's isolated R environment
           use-public-rspm: true
+      - name: Cache R packages
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-r-${{ hashFiles('.pre-commit-config.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-r-
+      - name: Install R dependencies for pre-commit
+        run: |
+          Rscript -e 'if (!requireNamespace("styler", quietly = TRUE)) install.packages("styler", repos="https://cloud.r-project.org")'
+          Rscript -e 'if (!requireNamespace("lintr", quietly = TRUE)) install.packages("lintr", repos="https://cloud.r-project.org")'
       - name: Setup Python
         uses: actions/setup-python@v5
         with:

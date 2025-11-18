@@ -4,7 +4,7 @@ Date: 2025-11-18
 
 ## Status
 
-Accepted
+Proposed
 
 ## Context
 
@@ -54,6 +54,7 @@ The pre-commit configuration includes:
 
 - styler (code formatting)
 - lintr (linting)
+- Note: R projects should install styler and lintr: `install.packages(c("styler", "lintr"))`
 
 **SQL:**
 

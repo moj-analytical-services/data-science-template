@@ -2,6 +2,7 @@
 
 [![Ministry of Justice Repository Compliance Badge](https://github-community.service.justice.gov.uk/repository-standards/api/analytical-platform-airflow-python-template/badge)](https://github-community.service.justice.gov.uk/repository-standards/analytical-platform-airflow-python-template)
 [![Pre-commit](https://github.com/moj-analytical-services/data-science-template/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/moj-analytical-services/data-science-template/actions/workflows/pre-commit.yml)
+[![Pytest](https://github.com/moj-analytical-services/data-science-template/actions/workflows/pytest.yml/badge.svg)](https://github.com/moj-analytical-services/data-science-template/actions/workflows/pytest.yml)
 
 This template repository equips you with the default initial files required for an Analytical Platform Airflow workflow.
 
@@ -27,7 +28,7 @@ The repository comes with the following preset files:
 This template includes pre-commit hooks for automated code quality checks. The hooks cover:
 
 - **Python**: Black formatting, Flake8 linting, Bandit security checks
-- **R**: styler formatting, lintr linting
+- **R**: styler formatting, lintr linting (requires R packages: `install.packages(c("styler", "lintr"))`)
 - **SQL**: SQLFluff linting and formatting
 - **Notebooks**: nbstripout to remove outputs
 - **General**: trailing whitespace, file size limits, secrets detection
