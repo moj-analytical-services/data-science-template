@@ -1,0 +1,64 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-added-large-files
+        args: ["--maxkb=5000"]
+        description: do not upload files larger than 5000kb / 5MB to avoid data being uploaded
+      - id: mixed-line-ending
+        args: ["--fix=lf"]
+        description: Forces to replace line ending by the UNIX 'lf' character.
+      - id: check-merge-conflict
+        description: Check for merge conflict markers
+      - id: check-yaml
+        description: Check YAML files for syntax errors
+      - id: check-json
+        description: Check JSON files for syntax errors
+      #- id: detect-private-key
+      #  description: Detect private keys in code
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.8.1
+    hooks:
+      - id: nbstripout
+  - repo: https://github.com/psf/black
+    rev: 25.9.0  # Use the latest stable version
+    hooks:
+      - id: black
+        args: ["--line-length=100"]
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        args: ['--baseline', '.secrets.baseline', '--exclude-files', '.*\.log$|.*\.json$']
+        exclude: ^\.secrets\.baseline$
+        description: Detect secrets like API keys, passwords, and tokens
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.3.0
+    hooks:
+      - id: flake8
+        args: ['--max-line-length=110', '--extend-ignore=E203,W503']
+        description: Python linting for style and potential errors
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.8.6
+    hooks:
+      - id: bandit
+        args: ['--skip=B101,B601']
+        description: Security linter for Python code
+        additional_dependencies: ['pbr']
+  - repo: https://github.com/lorenzwalthert/precommit
+    rev: v0.4.3.9015
+    hooks:
+      - id: style-files
+        args: ['--style_pkg=styler', '--style_fun=tidyverse_style', '--cache-root=styler']
+        description: Style R code with styler
+      - id: lintr
+        description: R linting for style and potential errors
+  - repo: https://github.com/sqlfluff/sqlfluff
+    rev: 3.2.5
+    hooks:
+      - id: sqlfluff-lint
+        description: Lint SQL files for style and syntax errors
+      - id: sqlfluff-fix
+        description: Auto-fix SQL style issues

@@ -6,10 +6,10 @@ ENV MOJAP_IMAGE_VERSION=${MOJAP_IMAGE_VERSION}
 # Below is an example of how to use the base image
 
 # Switch to root user to install packages
-# USER root                 
-                       
+# USER root
+
 # Copy requirements.txt
-# COPY requirements.txt requirements.txt 
+# COPY requirements.txt requirements.txt
 
 # Copy application code
 # COPY src/ .

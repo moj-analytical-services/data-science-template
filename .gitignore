@@ -1,10 +1,58 @@
+# Environment variables and secrets
 .env
+
+# Terraform
 .terraform/
+terraform.tfstate
+
+# Coverage
 coverage/
+
+# Virtual environments
 venv/
 env/
+ENV/
+.venv
+
+# IDEs and editors
 .DS_STORE
 .vscode
+.idea/
 *.code-workspace
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Checksums
 *.sha256
-terraform.tfstate
+
+# Data files (add specific patterns as needed)
+# *.csv
+# *.xlsx
+# *.parquet
+# data/

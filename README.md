@@ -1,6 +1,7 @@
 # Analytical Platform Airflow Python Template
 
 [![Ministry of Justice Repository Compliance Badge](https://github-community.service.justice.gov.uk/repository-standards/api/analytical-platform-airflow-python-template/badge)](https://github-community.service.justice.gov.uk/repository-standards/analytical-platform-airflow-python-template)
+[![Pre-commit](https://github.com/moj-analytical-services/data-science-template/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/moj-analytical-services/data-science-template/actions/workflows/pre-commit.yml)
 
 This template repository equips you with the default initial files required for an Analytical Platform Airflow workflow.
 
@@ -17,10 +18,78 @@ The repository comes with the following preset files:
 - Dependabot configuration
 - Dockerfile
 - MIT License
+- Pre-commit hooks configuration (`.pre-commit-config.yaml`)
+- Development dependencies (`requirements-dev.txt`)
+- Architecture Decision Records (`docs/adr/`)
+
+## Code Quality
+
+This template includes pre-commit hooks for automated code quality checks. The hooks cover:
+
+- **Python**: Black formatting, Flake8 linting, Bandit security checks
+- **R**: styler formatting, lintr linting
+- **SQL**: SQLFluff linting and formatting
+- **Notebooks**: nbstripout to remove outputs
+- **General**: trailing whitespace, file size limits, secrets detection
+
+After setting up your environment, the hooks will run automatically on each commit. You can also run them manually:
+
+```bash
+pre-commit run --all-files
+```
 
 ## Setup Instructions
 
 Once you've created your repository using this template, ensure the following steps:
+
+### Set Up Development Environment
+
+1. **Create a virtual environment** (in your project directory):
+
+   ```bash
+   python3 -m venv venv
+   ```
+
+   Add `venv` to your `.gitignore` file (already included in this template).
+
+2. **Activate the virtual environment**:
+
+   ```bash
+   source venv/bin/activate  # On macOS/Linux
+   # or
+   venv\Scripts\activate  # On Windows
+   ```
+
+   You'll see `(venv)` in your terminal prompt when activated.
+
+3. **Install development dependencies**:
+
+   ```bash
+   pip install -r requirements-dev.txt
+   ```
+
+4. **Install pre-commit hooks** (for code quality):
+
+   ```bash
+   pre-commit install
+   ```
+
+5. **Install project dependencies** (when you have a `requirements.txt`):
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+6. **Record your dependencies**:
+
+   When you add new packages, update the requirements file:
+
+   ```bash
+   pip freeze > requirements.txt
+   git add requirements.txt
+   ```
+
+**Note:** You may need to delete the `.bash_aliases` file (`rm ~/.bash_aliases`) from your home directory for pip to work properly within a virtual environment.
 
 ### Update README
 
