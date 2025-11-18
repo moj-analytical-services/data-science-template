@@ -4,7 +4,7 @@ Date: 2025-11-18
 
 ## Status
 
-Accepted
+Proposed
 
 ## Context
 
@@ -34,23 +34,22 @@ We will use `testthat` as the R testing framework with `renv` for dependency man
 
 **Dependency Management:**
 
-- Use `renv` for reproducible R package dependencies
-- Include `renv.lock` in version control
-- Initialize with `renv::init()` and snapshot with `renv::snapshot()`
+- Projects can optionally use `renv` for reproducible R package dependencies
+- For simple projects, install packages directly in CI/CD
+- If using renv: include `renv.lock` in version control and initialize with `renv::init()`
 
 **CI/CD:**
 
 - GitHub Actions workflow using `r-lib/actions/setup-r@v2`
-- Cache R packages to speed up workflow
+- Install testthat in CI/CD
 - Run tests with `testthat::test_dir("tests/unit/")`
+- Optional: Add renv caching when project uses renv
 
 **Workflow:**
 
 ```yaml
 - Setup R 4.5.1
-- Cache R packages (keyed on renv.lock)
-- Install renv
-- Restore packages from renv.lock
+- Install testthat
 - Run testthat tests
 ```
 
@@ -59,21 +58,20 @@ We will use `testthat` as the R testing framework with `renv` for dependency man
 **Positive:**
 
 - Standard R testing approach using testthat
-- Reproducible R environment via renv
+- Optional renv for reproducible R environments when needed
 - Automated R testing in CI/CD
 - Consistent test structure across Python and R
-- Package caching speeds up CI/CD runs
-- renv ensures package version consistency
+- Simple setup without mandatory renv overhead
 
 **Negative:**
 
-- Need to maintain separate dependency files (requirements.txt and renv.lock)
+- Need to maintain separate dependency management for Python and R
 - R tests may run slower than Python unit tests
 - Team needs familiarity with both testthat and pytest
-- renv adds initial setup overhead
+- Without renv, package versions not locked (can use renv when needed)
 
 **Neutral:**
 
 - Tests can be run locally: `Rscript -e 'testthat::test_dir("tests/unit/")'`
-- renv.lock must be updated when adding R packages: `renv::snapshot()`
+- Projects can add renv later if reproducibility becomes critical
 - Can use same test organization as Python (unit/integration/e2e)
