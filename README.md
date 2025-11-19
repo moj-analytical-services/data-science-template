@@ -173,8 +173,6 @@ We are aligned with the [analytical platform's guidance](https://user-guide.clou
    git add requirements.txt
    ```
 
-**Note:** You may need to delete the `.bash_aliases` file (`rm ~/.bash_aliases`) from your home directory for pip to work properly within a virtual environment.
-
 ### Set Up R Development Environment (Optional)
 
 If you're working with R:
