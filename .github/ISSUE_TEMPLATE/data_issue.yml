@@ -1,0 +1,40 @@
+name: 📊 Data Issue
+description: Report data quality, availability, or pipeline issues
+title: "[Data]: "
+labels: ["data", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a data issue! This helps us maintain data quality and reliability.
+
+        **Need immediate help or upstream support?** Reach out in the [#data_engineering Slack channel](https://moj.enterprise.slack.com/archives/C8X3PP1TN).
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Issue Description
+      description: Describe the data issue you're experiencing
+      placeholder: What's the problem with the data?
+    validations:
+      required: true
+
+  - type: textarea
+    id: data-source
+    attributes:
+      label: Data Source
+      description: Which dataset, table, or pipeline is affected?
+      placeholder: Specify the data source related to this issue
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission Checklist
+      description: Please confirm the following
+      options:
+        - label: I have checked for existing issues about this data problem
+          required: true
+        - label: I have not included sensitive or personal data in this issue
+          required: true
