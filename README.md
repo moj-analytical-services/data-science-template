@@ -6,6 +6,9 @@
 
 This template repository equips you with the default initial files required for an Analytical Platform Airflow workflow.
 
+> [!NOTE]
+> We are currently in development and suggestions are welcome! Open [an issue here](https://github.com/moj-analytical-services/data-science-template/issues/new/choose).
+
 ## Included Files
 
 The repository comes with the following preset files:
@@ -23,7 +26,7 @@ The repository comes with the following preset files:
 - Development dependencies (`requirements-dev.txt`)
 - Architecture Decision Records (`docs/adr/`)
 
-## Code Quality
+### Code Standards and Quality
 
 This template includes pre-commit hooks for automated code quality checks. The hooks cover:
 
@@ -44,6 +47,8 @@ pre-commit run --all-files
 Once you've created your repository using this template, ensure the following steps:
 
 ### Set Up Development Environment
+
+We are aligned with the [analytical platform's guidance](https://user-guide.cloud-platform.service.justice.gov.uk/documentation/getting-started/cloud-platform-cli.html#cloud-platform-cli) on setting up a Python development environment.
 
 1. **Create a virtual environment** (in your project directory):
 
