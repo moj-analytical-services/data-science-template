@@ -14,7 +14,7 @@ This template repository equips you with the default initial files required for 
 The repository comes with the following preset files:
 
 - GitHub Actions workflows
-  - Dependency review (if your repository is public) (`.github/workflows/dependency-review.yml`)
+  - ⚠️ (temporarily disabled) Dependency review (if your repository is public) (`.github/workflows/dependency-review.yml`)
   - Container release to Analytical Platform's ECR (`.github/workflows/release-container.yml`)
   - Container scan with Trivy (`.github/workflows/scan-container.yml`)
   - Container structure test (`.github/workflows/test-container.yml`)
