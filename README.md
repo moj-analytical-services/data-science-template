@@ -38,7 +38,7 @@ This template provides a robust foundation for data science projects:
 - **🧪 Testing Framework**: Three-tier test structure (unit, integration, end-to-end) with pytest and testthat
 - **🔒 Security Scanning**: Bandit for Python security, secrets detection, and container vulnerability scanning, as well as large file detection and nbstripout to detect if you're about to commit data
 - **📝 Architecture Decision Records**: Built-in ADR tooling for documenting important decisions
-- **🐳 Docker Ready**: Dockerfile included for containerized deployments on airflow using the Analytical platform workflow
+- **🐳 Docker Ready**: Dockerfile included for containerised deployments on airflow using the Analytical platform workflow
 - **🤖 CI/CD Workflows**: GitHub Actions for automated testing, container builds, and releases to to the ECS for use with Airflow on the analytical platform.
 - **📚 Comprehensive Documentation**: README templates, ADR examples, and test documentation
 - **🔄 PR and issue templates** to match common data science ways of working
@@ -194,7 +194,7 @@ If you're working with R:
 4. **Alternative - Use renv for dependency management**:
 
    ```R
-   # Initialize renv for your project
+   # Initialise renv for your project
    install.packages("renv")
    renv::init()
 
@@ -239,7 +239,7 @@ To add an Outside Collaborator to the repository, follow the [guidelines for man
 
 ### Update CODEOWNERS
 
-(Optional) Modify the CODEOWNERS file to specify the teams or users authorized to approve pull requests.
+(Optional) Modify the CODEOWNERS file to specify the teams or users authorised to approve pull requests.
 
 ### Configure Dependabot
 
