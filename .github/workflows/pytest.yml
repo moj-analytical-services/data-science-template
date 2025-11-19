@@ -30,7 +30,7 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
 
-      - name: Run unit tests
+      - name: Run unit and integration tests
         run: |
           source venv/bin/activate
-          pytest tests/unit/ --verbose
+          pytest tests/unit/ tests/integration/ --verbose

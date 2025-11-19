@@ -1,0 +1,15 @@
+FROM python:3.13-slim
+
+WORKDIR /app
+
+# Copy test data
+COPY tests/data/ /app/data/
+
+# Install test dependencies
+RUN pip install --no-cache-dir pytest pytest-cov
+
+# Copy tests
+COPY tests/ /app/tests/
+COPY pytest.ini /app/
+
+CMD ["pytest", "-m", "e2e", "-v"]

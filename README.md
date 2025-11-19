@@ -91,8 +91,25 @@ Each test directory contains a README with specific guidance. Example tests are 
 **Run Python tests:**
 
 ```bash
-pytest tests/
+# Run unit and integration tests (default - excludes e2e)
+pytest
+
+# Run specific test types
+pytest tests/unit/           # Unit tests only
+pytest -m integration        # Integration tests only
+pytest -m e2e                # E2E tests only (not recommended, use Docker)
 ```
+
+**Run E2E tests in Docker (recommended):**
+
+```bash
+# Build and run e2e tests in container (includes test data)
+docker build -f Dockerfile.test -t test-image .
+docker run --rm test-image
+```
+
+> [!NOTE]
+> E2E tests are excluded from default pytest runs. They're marked with `@pytest.mark.e2e` and designed to run in Docker.
 
 **Run R tests:**
 
