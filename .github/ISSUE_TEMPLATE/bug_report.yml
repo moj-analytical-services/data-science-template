@@ -30,24 +30,6 @@ body:
       required: false
 
   - type: textarea
-    id: expected-behavior
-    attributes:
-      label: Expected Behavior
-      description: What did you expect to happen?
-      placeholder: Describe what should have happened instead
-    validations:
-      required: false
-
-  - type: textarea
-    id: actual-behavior
-    attributes:
-      label: Actual Behavior
-      description: What actually happened?
-      placeholder: Describe what actually happened (include error messages if applicable)
-    validations:
-      required: false
-
-  - type: textarea
     id: environment
     attributes:
       label: Environment
