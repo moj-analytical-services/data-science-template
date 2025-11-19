@@ -81,8 +81,6 @@ adr-config
 
 ### What decisions should have an ADR?
 
-
-
 Document decisions that:
 
 - Affect the project structure or architecture
