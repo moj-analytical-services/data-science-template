@@ -27,7 +27,7 @@ body:
         2. Run command '...'
         3. See error
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: expected-behavior
@@ -36,7 +36,7 @@ body:
       description: What did you expect to happen?
       placeholder: Describe what should have happened instead
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: actual-behavior
@@ -45,7 +45,7 @@ body:
       description: What actually happened?
       placeholder: Describe what actually happened (include error messages if applicable)
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: environment
@@ -75,15 +75,6 @@ body:
     validations:
       required: false
 
-  - type: textarea
-    id: additional-context
-    attributes:
-      label: Additional Context
-      description: Add any other context about the problem here
-      placeholder: Screenshots, related issues, attempted solutions, etc.
-    validations:
-      required: false
-
   - type: checkboxes
     id: checks
     attributes:
@@ -91,6 +82,4 @@ body:
       description: Please confirm the following
       options:
         - label: I have searched existing issues to ensure this bug hasn't been reported
-          required: true
-        - label: I have provided all the information requested above
           required: true
