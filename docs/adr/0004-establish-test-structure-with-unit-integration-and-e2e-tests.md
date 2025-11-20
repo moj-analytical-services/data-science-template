@@ -30,7 +30,7 @@ We will establish a three-tier test structure:
 
 **Directory Structure:**
 
-```
+```text
 tests/
 ├── README.md           # Overview and guidelines
 ├── unit/               # Unit tests

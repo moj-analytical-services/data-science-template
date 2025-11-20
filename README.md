@@ -43,8 +43,6 @@ This template provides a robust foundation for data science projects:
 - **📚 Comprehensive Documentation**: README templates, ADR examples, and test documentation
 - **🔄 PR and issue templates** to match common data science ways of working
 
-
-
 ## Included Files
 
 The repository comes with the following preset files:

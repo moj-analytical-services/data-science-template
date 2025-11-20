@@ -4,7 +4,7 @@ This directory contains the test suite for the project, organized by test type.
 
 ## Test Structure
 
-```
+```text
 tests/
 ├── unit/          # Unit tests
 ├── integration/   # Integration tests

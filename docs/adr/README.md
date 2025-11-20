@@ -121,7 +121,6 @@ Examples for this template:
 
 ### Poor ADR titles
 
-
 - "Fix bug in data processing" (too specific, not architectural)
 - "Update dependencies" (routine maintenance)
 - "Add comments to code" (implementation detail)
