@@ -1,20 +1,56 @@
-# Analytical Platform Airflow Python Template
+# Data Science Project Template
 
-[![Ministry of Justice Repository Compliance Badge](https://github-community.service.justice.gov.uk/repository-standards/api/analytical-platform-airflow-python-template/badge)](https://github-community.service.justice.gov.uk/repository-standards/analytical-platform-airflow-python-template)
+[![Ministry of Justice Repository Compliance Badge](https://github-community.service.justice.gov.uk/repository-standards/api/data-science-template/badge)](https://github-community.service.justice.gov.uk/repository-standards/data-science-template)
 [![Pre-commit](https://github.com/moj-analytical-services/data-science-template/actions/workflows/pre-commit.yml/badge.svg)](https://github.com/moj-analytical-services/data-science-template/actions/workflows/pre-commit.yml)
 [![Pytest](https://github.com/moj-analytical-services/data-science-template/actions/workflows/pytest.yml/badge.svg)](https://github.com/moj-analytical-services/data-science-template/actions/workflows/pytest.yml)
 
-This template repository equips you with the default initial files required for an Analytical Platform Airflow workflow.
+A comprehensive template repository for data science projects on the Analytical Platform, supporting both Python and R development with built-in code quality tools, testing frameworks, and CI/CD workflows.
 
 > [!NOTE]
 > We are currently in development and suggestions are welcome! Open [an issue here](https://github.com/moj-analytical-services/data-science-template/issues/new/choose).
+
+## Quick Start
+
+1. **Create your repository** from this template:
+   - Click the green "Use this template" button at the top of this repository
+   - Select "Create a new repository"
+   - Name your repository and choose visibility settings
+
+2. **Clone your new repository**:
+
+   ```bash
+   git clone https://github.com/moj-analytical-services/your-repo-name.git
+   cd your-repo-name
+   ```
+
+3. **Set up your development environment**. Follow the [Setup Instructions](#setup-instructions) below
+
+4. **Update the README** to reflect your project and [correct the update badge links](#modify-the-github-standards-badge)
+
+5. **Start building!**
+
+## Features
+
+This template provides a robust foundation for data science projects:
+
+- **🐍 Python, 🗄️ SQL & 📊 R Support**: Pre-configured for all three languages with formatting and testing
+- **✅ Code Quality Tools**: Pre-commit hooks for automated formatting, linting, and security checks
+- **🧪 Testing Framework**: Three-tier test structure (unit, integration, end-to-end) with pytest and testthat
+- **🔒 Security Scanning**: Bandit for Python security, secrets detection, and container vulnerability scanning, as well as large file detection and nbstripout to detect if you're about to commit data
+- **📝 Architecture Decision Records**: Built-in ADR tooling for documenting important decisions
+- **🐳 Docker Ready**: Dockerfile included for containerized deployments on airflow using the Analytical platform workflow
+- **🤖 CI/CD Workflows**: GitHub Actions for automated testing, container builds, and releases to to the ECS for use with Airflow on the analytical platform.
+- **📚 Comprehensive Documentation**: README templates, ADR examples, and test documentation
+- **🔄 PR and issue templates** to match common data science ways of working
+
+
 
 ## Included Files
 
 The repository comes with the following preset files:
 
 - GitHub Actions workflows
-  - Dependency review (if your repository is public) (`.github/workflows/dependency-review.yml`)
+  - ⚠️ (temporarily disabled) Dependency review (if your repository is public) (`.github/workflows/dependency-review.yml`)
   - Container release to Analytical Platform's ECR (`.github/workflows/release-container.yml`)
   - Container scan with Trivy (`.github/workflows/scan-container.yml`)
   - Container structure test (`.github/workflows/test-container.yml`)
@@ -41,6 +77,31 @@ After setting up your environment, the hooks will run automatically on each comm
 ```bash
 pre-commit run --all-files
 ```
+
+### Testing
+
+The template includes a three-tier testing structure:
+
+- **Unit Tests** (`tests/unit/`): Test individual functions and components in isolation
+- **Integration Tests** (`tests/integration/`): Test how components work together
+- **End-to-End Tests** (`tests/e2e/`): Test complete workflows from start to finish
+
+Each test directory contains a README with specific guidance. Example tests are provided for both Python (pytest) and R (testthat).
+
+**Run Python tests:**
+
+```bash
+pytest tests/
+```
+
+**Run R tests:**
+
+```R
+# In R console
+testthat::test_dir("tests/unit")
+```
+
+See the [tests README](tests/README.md) for more details on the testing strategy.
 
 ## Setup Instructions
 
@@ -97,6 +158,53 @@ We are aligned with the [analytical platform's guidance](https://user-guide.clou
 
 **Note:** You may need to delete the `.bash_aliases` file (`rm ~/.bash_aliases`) from your home directory for pip to work properly within a virtual environment.
 
+### Set Up R Development Environment (Optional)
+
+If you're working with R:
+
+1. **Install R** (if not already installed):
+
+   Follow the [R installation guide](https://cloud.r-project.org/) for your operating system.
+
+2. **Install required R packages** for code quality:
+
+   ```R
+   # In R console
+   install.packages(c("styler", "lintr", "testthat"))
+   ```
+
+3. **Install project-specific R packages**:
+
+   Create a file called `install_packages.R` in your project root and list your dependencies:
+
+   ```R
+   # install_packages.R
+   packages <- c(
+     "dplyr",
+     "ggplot2",
+     "tidyr"
+     # Add your packages here
+   )
+
+   install.packages(packages)
+   ```
+
+   Run it with: `Rscript install_packages.R`
+
+4. **Alternative - Use renv for dependency management**:
+
+   ```R
+   # Initialize renv for your project
+   install.packages("renv")
+   renv::init()
+
+   # Install packages (they'll be tracked by renv)
+   install.packages("dplyr")
+
+   # Create a snapshot of your dependencies
+   renv::snapshot()
+   ```
+
 ### Update README
 
 Edit this README.md file to document your project accurately. Take the time to create a clear, engaging, and informative README.md file. Include information like what your project does, how to install and run it, how to contribute, and any other pertinent details.
@@ -113,9 +221,7 @@ Assign permissions to the appropriate Ministry of Justice teams. Ensure at least
 
 ### Read about the GitHub repository standards
 
-Familiarise yourself with the Ministry of Justice GitHub Repository Standards. These standards ensure consistency, maintainability, and best practices across all our repositories.
-
-You can find the standards [here](https://user-guide.operations-engineering.service.justice.gov.uk/documentation/information/mojrepostandards.html).
+Familiarise yourself with the [Ministry of Justice GitHub Repository Standards](https://user-guide.operations-engineering.service.justice.gov.uk/documentation/information/mojrepostandards.html). These standards ensure consistency, maintainability, and best practices across all our repositories.
 
 Please read and understand these standards thoroughly and enable them when you feel comfortable.
 
@@ -129,7 +235,7 @@ The badge demonstrates that your repository is compliant with MoJ's standards. P
 
 ### Manage Outside Collaborators
 
-To add an Outside Collaborator to the repository, follow the guidelines detailed [here](https://github.com/ministryofjustice/github-collaborators).
+To add an Outside Collaborator to the repository, follow the [guidelines for managing GitHub collaborators](https://github.com/ministryofjustice/github-collaborators).
 
 ### Update CODEOWNERS
 
@@ -142,3 +248,34 @@ Adapt the dependabot.yml file to match your project's [dependency manager](https
 ### Dependency Review
 
 If your repository is private with no GitHub Advanced Security license, remove the `.github/workflows/dependency-review.yml` file.
+
+## Contributing
+
+We welcome contributions and suggestions! Here's how you can help:
+
+1. **Report Issues**: Found a bug or have a feature request? [Open an issue](https://github.com/moj-analytical-services/data-science-template/issues/new/choose)
+
+2. **Suggest Improvements**: Have ideas for improving this template? Create an issue with the "enhancement" label
+
+3. **Submit Pull Requests**:
+   - Fork the repository
+   - Create a feature branch (`git checkout -b feature/improvement`)
+   - Make your changes and commit (`git commit -am 'Add new feature'`)
+   - Push to the branch (`git push origin feature/improvement`)
+   - Open a Pull Request
+
+4. **Document Decisions**: For significant architectural changes, create an [Architecture Decision Record](docs/adr/README.md) using:
+
+   ```bash
+   adr-new "Your decision title"
+   ```
+
+### Code of Conduct
+
+This project follows the [Ministry of Justice's Code of Conduct](https://user-guide.operations-engineering.service.justice.gov.uk/documentation/information/mojrepostandards.html). Please be respectful and professional in all interactions.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+This license may not be appropriate for all projects, because it gives permission to anyone with access to the repo to open source a copy of it. Please review and change the license as necessary for your project.
