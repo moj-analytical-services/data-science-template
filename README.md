@@ -43,25 +43,6 @@ This template provides a robust foundation for data science projects:
 - **📚 Comprehensive Documentation**: README templates, ADR examples, and test documentation
 - **🔄 PR and issue templates** to match common data science ways of working
 
-
-
-## Included Files
-
-The repository comes with the following preset files:
-
-- GitHub Actions workflows
-  - ⚠️ (temporarily disabled) Dependency review (if your repository is public) (`.github/workflows/dependency-review.yml`)
-  - Container release to Analytical Platform's ECR (`.github/workflows/release-container.yml`)
-  - Container scan with Trivy (`.github/workflows/scan-container.yml`)
-  - Container structure test (`.github/workflows/test-container.yml`)
-- CODEOWNERS
-- Dependabot configuration
-- Dockerfile
-- MIT License
-- Pre-commit hooks configuration (`.pre-commit-config.yaml`)
-- Development dependencies (`requirements-dev.txt`)
-- Architecture Decision Records (`docs/adr/`)
-
 ### Code Standards and Quality
 
 This template includes pre-commit hooks for automated code quality checks. The hooks cover:
