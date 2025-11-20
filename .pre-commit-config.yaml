@@ -19,11 +19,11 @@ repos:
       #- id: detect-private-key
       #  description: Detect private keys in code
   - repo: https://github.com/kynan/nbstripout
-    rev: 0.8.1
+    rev: 0.8.2
     hooks:
       - id: nbstripout
   - repo: https://github.com/psf/black
-    rev: 25.9.0  # Use the latest stable version
+    rev: 25.11.0  # Use the latest stable version
     hooks:
       - id: black
         args: ["--line-length=100"]
@@ -41,7 +41,7 @@ repos:
         args: ['--max-line-length=110', '--extend-ignore=E203,W503']
         description: Python linting for style and potential errors
   - repo: https://github.com/PyCQA/bandit
-    rev: 1.8.6
+    rev: 1.9.1
     hooks:
       - id: bandit
         args: ['--skip=B101,B601']
@@ -58,9 +58,15 @@ repos:
   #     - id: lintr
   #       description: R linting for style and potential errors
   - repo: https://github.com/sqlfluff/sqlfluff
-    rev: 3.2.5
+    rev: 4.0.0a2
     hooks:
       - id: sqlfluff-lint
         description: Lint SQL files for style and syntax errors
       - id: sqlfluff-fix
         description: Auto-fix SQL style issues
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.46.0
+    hooks:
+      - id: markdownlint
+        args: ['--fix']
+        description: Lint and auto-fix Markdown files for style consistency
